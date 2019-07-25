@@ -19,5 +19,5 @@ RUN node -v
 RUN npm -v
 RUN yarn -v
 
-RUN npm install --save cypress start-server-and-test
+RUN npm install --save cypress@3.4.0 start-server-and-test
 RUN $(npm bin)/cypress verify
