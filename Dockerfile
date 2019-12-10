@@ -1,4 +1,4 @@
-FROM node:10.15.0
+FROM node:10.17.0
 
 RUN apt-get update && \
   apt-get install -y \
