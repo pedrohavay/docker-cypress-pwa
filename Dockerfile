@@ -40,10 +40,10 @@ RUN apt-get update && apt-get install -y zip
 # avoid too many progress messages
 # https://github.com/cypress-io/cypress/issues/1243
 ENV CI=1
-ARG CYPRESS_VERSION="3.1.5"
+ARG CYPRESS_VERSION="3.8.1"
 
 RUN unset PUPPETEER_SKIP_CHROMIUM_DOWNLOAD
-RUN npm install cypress@3.1.5 start-server-and-test@^1.10.2 @percy/cypress puppeteer --unsafe-perm=true
+RUN npm install cypress@3.8.1 start-server-and-test@^1.10.6 @percy/cypress puppeteer --unsafe-perm=true
 
 RUN echo "whoami: $(whoami)"
 RUN npm config -g set user $(whoami)
