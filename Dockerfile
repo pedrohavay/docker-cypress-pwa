@@ -1,4 +1,4 @@
-FROM node:10.17.0
+FROM node:10.19.0
 
 RUN apt-get update && \
   apt-get install -y \
@@ -36,6 +36,9 @@ ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 
 # Add zip utility - it comes in very handy
 RUN apt-get update && apt-get install -y zip
+
+# Install rsync to be used on cypress-report-generator
+RUN apt-get install rsync
 
 # avoid too many progress messages
 # https://github.com/cypress-io/cypress/issues/1243
