@@ -12,7 +12,7 @@ RUN apt-get update && \
     libpng-dev \
     build-essential
 
-RUN npm install -g npm@6.4.1
+RUN npm install -g npm@6.11.3
 
 USER root
 
@@ -43,10 +43,10 @@ RUN apt-get install -y rsync
 # avoid too many progress messages
 # https://github.com/cypress-io/cypress/issues/1243
 ENV CI=1
-ARG CYPRESS_VERSION="4.0.2"
+ARG CYPRESS_VERSION="4.5.0"
 
 RUN unset PUPPETEER_SKIP_CHROMIUM_DOWNLOAD
-RUN npm install cypress@4.0.2 start-server-and-test@^1.10.8 @percy/cypress puppeteer --unsafe-perm=true
+RUN npm install cypress@4.5.0 start-server-and-test@^1.11.0 @percy/cypress puppeteer --unsafe-perm=true
 
 RUN echo "whoami: $(whoami)"
 RUN npm config -g set user $(whoami)
