@@ -12,7 +12,7 @@ RUN apt-get update && \
     libpng-dev \
     build-essential
 
-RUN npm install -g npm@7.6.2
+RUN npm install -g npm@6.14.8
 
 USER root
 
