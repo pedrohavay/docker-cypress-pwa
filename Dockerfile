@@ -10,7 +10,8 @@ RUN apt-get update && \
     libasound2 \
     xvfb \
     libpng-dev \
-    build-essential
+    build-essential \
+    openjdk-8-jre
 
 RUN npm install -g npm@7.6.2
 
@@ -43,10 +44,10 @@ RUN apt-get install -y rsync
 # avoid too many progress messages
 # https://github.com/cypress-io/cypress/issues/1243
 ENV CI=1
-ARG CYPRESS_VERSION="7.0.0"
+ARG CYPRESS_VERSION="6.5.0"
 
 RUN unset PUPPETEER_SKIP_CHROMIUM_DOWNLOAD
-RUN npm install cypress@7.0.0 start-server-and-test@^1.12.1 @percy/cypress puppeteer --unsafe-perm=true
+RUN npm install cypress@6.5.0 start-server-and-test@^1.12.1 @percy/cypress puppeteer --unsafe-perm=true
 
 RUN echo "whoami: $(whoami)"
 RUN npm config -g set user $(whoami)
