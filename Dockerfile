@@ -43,14 +43,14 @@ RUN apt-get install -y rsync
 # avoid too many progress messages
 # https://github.com/cypress-io/cypress/issues/1243
 ENV CI=1
-ARG CYPRESS_VERSION="7.0.0"
+ARG CYPRESS_VERSION="7.1.0"
 
 RUN unset PUPPETEER_SKIP_CHROMIUM_DOWNLOAD
-RUN npm install cypress@7.0.0 start-server-and-test@^1.12.1 @percy/cypress puppeteer --unsafe-perm=true
+RUN npm install cypress@7.1.0 start-server-and-test@^1.12.1 puppeteer --unsafe-perm=true
 
 RUN echo "whoami: $(whoami)"
 RUN npm config -g set user $(whoami)
-RUN npm install -g "cypress@${CYPRESS_VERSION} percy"
+RUN npm install -g "cypress@${CYPRESS_VERSION}"
 RUN cypress verify
 
 # Cypress cache and installed version
