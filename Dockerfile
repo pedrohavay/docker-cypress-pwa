@@ -10,7 +10,8 @@ RUN apt-get update && \
     libasound2 \
     xvfb \
     libpng-dev \
-    build-essential
+    build-essential \
+    openjdk-8-jre
 
 RUN npm install -g npm@6.14.8
 
