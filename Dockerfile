@@ -64,6 +64,6 @@ RUN echo  " node version:    $(node -v) \n" \
   "Chrome version:  $(google-chrome --version) \n" \
   "user:            $(whoami) \n"
 
-RUN date --iso-8601 > /build-timestamp
-COPY entrypoint.sh /entrypoint.sh
-ENTRYPOINT /entrypoint.sh
+ADD entrypoint.sh /usr/local/bin
+
+ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
