@@ -63,3 +63,7 @@ RUN echo  " node version:    $(node -v) \n" \
   "debian version:  $(cat /etc/debian_version) \n" \
   "Chrome version:  $(google-chrome --version) \n" \
   "user:            $(whoami) \n"
+
+RUN date --iso-8601 > /build-timestamp
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT /entrypoint.sh
