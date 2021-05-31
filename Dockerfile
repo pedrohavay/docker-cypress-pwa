@@ -44,10 +44,10 @@ RUN apt-get install -y rsync
 # avoid too many progress messages
 # https://github.com/cypress-io/cypress/issues/1243
 ENV CI=1
-ARG CYPRESS_VERSION="7.3.0"
+ARG CYPRESS_VERSION="7.4.0"
 
 RUN unset PUPPETEER_SKIP_CHROMIUM_DOWNLOAD
-RUN npm install cypress@7.3.0 start-server-and-test@^1.12.1 puppeteer --unsafe-perm=true
+RUN npm install cypress@7.4.0 start-server-and-test@^1.12.2 puppeteer --unsafe-perm=true
 
 RUN echo "whoami: $(whoami)"
 RUN npm config -g set user $(whoami)
