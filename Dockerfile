@@ -1,4 +1,4 @@
-FROM node:12.16.2
+FROM node:10.19.0
 
 RUN apt-get update && \
   apt-get install -y \
