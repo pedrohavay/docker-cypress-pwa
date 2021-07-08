@@ -63,3 +63,11 @@ RUN echo  " node version:    $(node -v) \n" \
   "debian version:  $(cat /etc/debian_version) \n" \
   "Chrome version:  $(google-chrome --version) \n" \
   "user:            $(whoami) \n"
+
+WORKDIR /usr/local/bin
+
+ADD entrypoint.sh ./
+
+RUN ["chmod", "+x", "entrypoint.sh"]
+
+ENTRYPOINT [ "/bin/bash", "-c", "entrypoint.sh" ]
