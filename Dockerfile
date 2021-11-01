@@ -1,19 +1,19 @@
-FROM node:12.16.2
+FROM node:14.15.4
 
 RUN apt-get update && \
   apt-get install -y \
-    libgtk2.0-0 \
-    libnotify-dev \
-    libgconf-2-4 \
-    libnss3 \
-    libxss1 \
-    libasound2 \
-    xvfb \
-    libpng-dev \
-    build-essential \
-    openjdk-8-jre
+  libgtk2.0-0 \
+  libnotify-dev \
+  libgconf-2-4 \
+  libnss3 \
+  libxss1 \
+  libasound2 \
+  xvfb \
+  libpng-dev \
+  build-essential \
+  openjdk-8-jre
 
-RUN npm install -g npm@6.14.8
+RUN npm install -g npm@6.14.10
 
 USER root
 
