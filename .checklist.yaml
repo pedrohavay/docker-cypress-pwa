@@ -1,0 +1,43 @@
+---
+# For information about each parameter see:
+# https://guidelines.quintoandar.com.br/#/checklist/?id=parameters
+apiVersion: quintoandar.com.br/v1alpha1
+kind: ServiceChecklist
+metadata:
+  name: docker-cypress-pwa
+spec:
+  description: >-
+    QuintoAndar's Drone image to encapsulate Cypress tools
+  ecosystem: devtools
+  applicationGroup: ''
+  cost_center: C055
+  department: engineering
+  repo_status: development
+  service: docker-cypress-pwa
+
+  serviceOwners:
+    tribe: tech-platform
+    squad: web-platform
+    lead: jefferson.amorim@quintoandar.com.br
+    owner: gabriel.capanema@quintondar.com.br
+
+  auditing:
+    enabled: false
+
+  maintenanceWindow: 0h
+
+  stakeholders:
+    engineeringManagers:
+      - augusto.souza@quintoandar.com.br
+      - jefferson.amorim@quintoandar.com.br
+    # infoSec:
+    #   - name.surname@quintoandar.com.br
+    # SREs:
+    #   - name.surname@quintoandar.com.br
+
+  channels:
+    squad:  '@webplatform'
+    alerts: '#cypress'
+
+  dates:
+    launch: 22/10/2020
