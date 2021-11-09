@@ -1,5 +1,7 @@
 FROM node:16.13.0
 
+WORKDIR /usr/app
+
 RUN apt-get update && \
   apt-get install -y \
   libgtk2.0-0 \
@@ -11,7 +13,7 @@ RUN apt-get update && \
   xvfb \
   libpng-dev \
   build-essential \
-  openjdk-8-jre
+  openjdk-11-jre
 
 RUN npm install -g npm@8.1.0
 
