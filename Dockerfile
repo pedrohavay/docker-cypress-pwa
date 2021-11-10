@@ -1,4 +1,4 @@
-FROM node:14.15.4
+FROM node:16.13.0
 
 RUN apt-get update && \
   apt-get install -y \
@@ -11,7 +11,7 @@ RUN apt-get update && \
   xvfb \
   libpng-dev \
   build-essential \
-  openjdk-8-jre
+  openjdk-11-jre
 
 RUN npm install -g npm@6.14.10
 
